@@ -1,150 +1,208 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+.wrapper {
+  padding-bottom: 6rem;
 }
 
-.main {
+/* Hero */
+.hero {
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+.heroLogoWrapper {
   display: flex;
-  flex: 1;
-  width: 100%;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.heroLogo {
+  border-radius: 50%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border: 4px solid #ffffff;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  color: var(--accents-6);
   max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main Board */
+.boardSection {
+  padding: 2rem 0;
+}
+
+.boardContainer {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid var(--accents-2);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
+}
+
+.boardHeader {
+  display: flex;
   justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--accents-2);
+}
+
+.boardHeaderTitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconBoxPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--brand-bg);
+  color: var(--brand);
+  border-radius: 12px;
+}
+
+.iconBoxPrimary svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.boardHeader h2 {
+  font-size: 1.75rem;
+  color: var(--foreground);
+}
+
+.linkArrow {
+  color: var(--accents-6);
   font-weight: 500;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.linkArrow:hover {
+  color: var(--brand);
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+/* Bento Grid Inside Board */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.bentoCard {
+  background: var(--accents-1);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid transparent;
+  transition: all var(--transition);
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+.bentoCard:hover {
+  background: #ffffff;
+  border-color: var(--accents-3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
+.cardIcon {
+  font-size: 1.5rem;
+}
+
+.cardHeader h3 {
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+
+.cardLink {
+  color: var(--accents-5);
+  font-size: 1.25rem;
+}
+
+.bentoCard:hover .cardLink {
+  color: var(--brand);
+}
+
+.pillContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cardLarge {
+  grid-row: span 2;
+}
+
+.cardWide {
+  grid-column: span 2;
+}
+
+/* Features */
+.featuresSection {
+  padding: 6rem 0;
+}
+
+.sectionTitleCenter {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.featureBox {
+  text-align: center;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  border: 1px solid var(--accents-2);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featureBox h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.featureBox p {
+  color: var(--accents-6);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .boardContainer {
+    padding: 1.5rem;
+  }
+  .bentoGrid, .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+  .cardWide {
+    grid-column: span 1;
+  }
 }
